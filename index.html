@@ -1,0 +1,404 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel=" stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+   <title>Food delivery service </title>
+
+</head>
+<body>
+   <!--sidebar-->
+   <div class="sidebar">
+    <!--logo-->
+    <h1 class="logo">CraveWave</h1>
+
+    <!--list of menus-->
+   <div class="sidebar-menus">
+       <a href="#"><ion-icon name ="storefront-outline"></ion-icon>Home</a>
+       <a href="#"><ion-icon name ="receipt-outline"></ion-icon>Bills</a>
+       <a href="#"><ion-icon name ="wallet-outline"></ion-icon>Wallet</a>
+       <a href="#"><ion-icon name ="notifications-outline"></ion-icon>Notifications</a>
+       <a href="#"><ion-icon name ="chatbubbles-outline"></ion-icon>Contact Us</a>
+       <a href="#"><ion-icon name ="settings-outline"></ion-icon>Settings</a>
+   </div>
+     <!--logout-->
+     <div class="sidebar-logout">
+        <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+     </div>
+   </div>
+
+   <!--main-->
+   <div class="main">
+      <!--main navbar-->
+      <div class="main-navbar">
+      <!--menu when appear on mobile version-->
+      <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+      <!--search bar-->
+      <div class="search">
+        <input type="text" placeholder="what are you craving?">
+        <button class="search-btn">Search</button>
+      </div>
+      <!--profile icon on left side of navbar-->
+      <div class="profile">
+        <a class="cart" href="#" onclick="toggleCartPopup()">
+            <ion-icon name="cart-outline"></ion-icon>
+            <span class="cart-count" id="cart-count">0</span>
+        </a>
+        <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a>
+      </div>
+ </div>
+     <!--shopping cart section-->
+     <div id="cart-popup" class="cart-popup">
+        <h4>Shopping Cart</h4>
+        <table id="cart-items">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>#</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JS will add rows here -->
+            </tbody>
+          </table>
+
+        
+        <p>Total <span id="cart-total">0.00</span></p>
+        <a class="cart-close" onclick="closeCart()"><ion-icon name="close-circle-outline"></ion-icon></a>
+     </div>
+
+
+
+      <!--main highlight-->
+      <div class="main-highlight">
+        <!--title section and arrow-->
+        <div class="main-header">
+            <h2 class="main-title">Recommendations</h2>
+            <div class="main-arrow">
+                <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
+                <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon>
+            </div>
+        </div>
+        <!--highlight menu-->
+        <div class="highlight-wrapper">
+            <div class="highlight-card">
+                <img class="highlight-img" src="bowl-salad.jpeg">
+                <div class="highlight-desc">
+                    <h4>Fresh Salad</h4>
+                    <p>Rs.1200</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <img class="highlight-img " src="Burger-and-Fries.jpg">
+                <div class="highlight-desc">
+                    <h4>Chicken Burger </h4>
+                    <p>Rs.1400</p>
+                </div>
+            </div>
+
+            <div class="highlight-card">
+                <img class="highlight-img " src="choco-brownie milkshake.png">
+                <div class="highlight-desc">
+                    <h4>Brownie Milkshake </h4>
+                    <p>Rs.1000</p>
+                </div>
+           </div>
+
+           
+           <div class="highlight-card">
+            <img class="highlight-img " src="delicious-cheesecake.jpg">
+            <div class="highlight-desc">
+                <h4>Blueberry Cheesecake </h4>
+                <p>Rs.1250</p>
+            </div>
+       </div>
+
+       <div class="highlight-card">
+        <img class="highlight-img " src="_a_cup_of_cappuccino_coffee_.webp">
+        <div class="highlight-desc">
+            <h4>Cappuccino</h4>
+            <p>Rs.680</p>
+        </div>
+   </div>
+
+   <div class="highlight-card">
+    <img class="highlight-img " src="dark-chocolate-cake-slice.jpeg">
+    <div class="highlight-desc">
+        <h4>Death By Chocolate</h4>
+        <p>Rs.800</p>
+    </div>
+</div>
+
+<div class="highlight-card">
+    <img class="highlight-img " src="delicious-submarine-sandwich-.jpeg">
+    <div class="highlight-desc">
+        <h4>Submarine Sandwitch </h4>
+        <p>Rs.850</p>
+    </div>
+</div>
+
+
+<div class="highlight-card">
+    <img class="highlight-img " src="chocolate-milkshake.jpeg">
+    <div class="highlight-desc">
+        <h4>Chocolate Milkshake </h4>
+        <p>Rs.950</p>
+    </div>
+</div>
+      </div>
+      </div>
+   
+
+      <!--main menus/ order-->
+      <div class="main-menus">
+      <div class="main-filter">
+   <div>
+   <h2 class="main-title">Menu<br>Category</h2>
+   <div class="main-arrow">
+    <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
+    <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
+   </div>
+</div>
+<div class="filter-wrapper">
+    <div class="filter-card">
+        <div class="filter-icon">
+            <ion-icon name="restaurant-outline"></ion-icon>
+        </div>
+        <p>All Menus</p>
+    </div>
+    <div class="filter-card">
+        <div class="filter-icon">
+            <ion-icon name="fast-food-outline"></ion-icon>
+        </div>
+        <p>Burger</p>
+    </div>
+    <div class="filter-card">
+        <div class="filter-icon">
+            <ion-icon name="pizza-outline"></ion-icon>
+        </div>
+        <p>Pizza</p>
+    </div>
+    <div class="filter-card">
+        <div class="filter-icon">
+            <ion-icon name="wine-outline"></ion-icon>
+        </div>
+        <p>Wine</p>
+    </div>
+    <div class="filter-card">
+        <div class="filter-icon">
+            <ion-icon name="ice-cream-outline"></ion-icon>
+        </div>
+        <p>Ice Cream</p>
+    </div>
+    <div class="filter-card">
+        <div class="filter-icon">
+            <ion-icon name="cafe-outline"></ion-icon>
+        </div>
+        <p>Coffee</p>
+    </div>
+    <div class="filter-card">
+        <div class="filter-icon">
+            <ion-icon name="fish-outline"></ion-icon>
+        </div>
+        <p>Seafood</p>
+    </div>
+    <div class="filter-card">
+        <div class="filter-icon">
+            <ion-icon name="nutrition-outline"></ion-icon>
+        </div>
+        <p>Healthy</p>
+    </div>
+</div>
+</div>
+      
+<hr class="divider">
+<!--list of food menus-->
+<div class="main-detail">
+    <h2 class="main-title">Choose Order</h2>
+    <div class="detail-wrapper">
+        <div class="detail-card">
+            <img class="detail-img" src="bowl-spicy-shrimp-stew.jpeg">
+            <div class="detail-desc">
+                <div class="detail-name">
+                    <h4>Shrimp Soup</h4>
+                    <p class="detail-sub">Spicy Thai Tom Yum shrimp soup with plump prawns, fresh cilantro, and red chilies.</p>
+                    <p class="price">Rs 1600</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Shrimp Soup', 1600.00)">Add To Cart</button>
+                </div>
+                <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="detail-card">
+            <img class="detail-img" src="italian-cuisine-pizza.jpeg">
+            <div class="detail-desc">
+                <div class="detail-name">
+                    <h4> Pizza</h4>
+                    <p class="detail-sub">Classic Margherita pizza with gooey melted mozzarella, fresh basil leaves, and cherry tomatoes on a thin crust.</p>
+                    <p class="price">Rs 2000</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pizza', 2000.00)">Add To Cart</button>
+                </div>
+                <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+        </div>
+    </div>
+    <div class="detail-card">
+        <img class="detail-img" src="red-wine-glass-bottle.jpg">
+        <div class="detail-desc">
+            <div class="detail-name">
+                <h4>Red Wine</h4>
+                <p class="detail-sub">Elegant red wine: perfect for romantic dinners or cozy evenings.</p>
+                <p class="price">Rs 3700</p><br>
+                <button class="add-to-cart-btn" onclick="addToCart('Red Wine', 3700.00)">Add To Cart</button>
+            </div>
+            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+        </div>
+    </div>
+    <div class="detail-card">
+        <img class="detail-img" src="burger-dark.jpg">
+        <div class="detail-desc">
+            <div class="detail-name">
+                <h4>Burger</h4>
+                <p class="detail-sub">Juicy cheeseburger with bacon, lettuce, tomato, onion & sesame bun.</p>
+                <p class="price">Rs 1300</p><br>
+                <button class="add-to-cart-btn" onclick="addToCart('Burger', 1300.00)">Add To Cart</button>
+            </div>
+            <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+    </div>
+</div>
+<div class="detail-card">
+    <img class="detail-img" src="latte-macchiato.jpg">
+    <div class="detail-desc">
+        <div class="detail-name">
+            <h4>Latte Macchiato</h4>
+            <p class="detail-sub">Tall glass of latte macchiato with perfect layered espresso, steamed milk, and thick velvety foam crown.</p>
+            <p class="price">Rs 700</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Latte Macchiato', 700.00)">Add To Cart</button>
+        </div>
+        <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+      </div>
+   </div>
+   <div class="detail-card">
+    <img class="detail-img" src="club sandwitch.jpg">
+    <div class="detail-desc">
+        <div class="detail-name">
+            <h4>Club Sandwitch with Fries</h4>
+            <p class="detail-sub">Towering club sandwich on toasted bread with chicken, bacon, egg, cheese, lettuce, tomato, and fries.</p>
+            <p class="price">Rs 1400</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Club Sandwitch with Fries', 1400.00)">Add To Cart</button>
+        </div>
+        <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+</div>
+</div>
+<div class="detail-card">
+    <img class="detail-img" src="submarine-sandwich-and-fries-.jpg">
+    <div class="detail-desc">
+        <div class="detail-name">
+            <h4>Chicken Submarine with Fries</h4>
+            <p class="detail-sub">Crispy chicken sandwich on rustic bread with lettuce, tomato, mayo, fries.</p>
+            <p class="price">Rs 1000</p><br>
+            <button class="add-to-cart-btn" onclick="addToCart('Chicken Submarine with Fries', 1000.00)">Add To Cart</button>
+        </div>
+        <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+    </div>
+</div>
+<div class="detail-card">
+    <img class="detail-img" src="savory-fried-rice.jpeg">
+    <div class="detail-desc">
+        <div class="detail-name">
+            <h4>Savory Fried Rice</h4>
+            <p class="detail-sub">Vibrant vegetable fried rice with scrambled egg, peas, bell peppers, and cilantro.</p>
+            <p class="price">Rs 750</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Savory Fried Rice', 750.00)">Add To Cart</button>
+        </div>
+        <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+    </div>
+</div>
+<div class="detail-card">
+    <img class="detail-img" src="_a_cup_of_cappuccino_coffee_.webp">
+    <div class="detail-desc">
+        <div class="detail-name">
+            <h4>Cappuccino Coffee</h4>
+            <p class="detail-sub">Elegant cappuccino with intricate latte art in a sleek black cup.</p>
+            <p class="price">Rs 680</p><br>
+            <button class="add-to-cart-btn" onclick="addToCart('Cappuccino Coffee', 680.00)">Add To Cart</button>
+        </div>
+        <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+    </div>
+</div>
+<div class="detail-card">
+    <img class="detail-img" src="classic-cheesecake-.jpg">
+    <div class="detail-desc">
+        <div class="detail-name">
+            <h4>Classic Cheesecake</h4>
+            <p class="detail-sub">Classic creamy cheesecake slice with buttery graham cracker crust.</p>
+            <p class="price">Rs 800</p><br>
+            <button class="add-to-cart-btn" onclick="addToCart('Classic Cheesecake', 800.00)">Add To Cart</button>
+        </div>
+        <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+    </div>
+</div>
+<div class="detail-card">
+    <img class="detail-img" src="choco-brownie milkshake.png">
+    <div class="detail-desc">
+        <div class="detail-name">
+            <h4>Choco Brownie Milkshake</h4>
+            <p class="detail-sub">Indulgent brownie milkshake crowned with fudgy brownie cubes and dripping caramel.</p>
+            <p class="price">Rs 1280</p><br>
+            <button class="add-to-cart-btn" onclick="addToCart('Choco Brownie Milkshake', 1280.00)">Add To Cart</button>
+        </div>
+        <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+    </div>
+</div>
+<div class="detail-card">
+    <img class="detail-img" src="delicious-cheesecake.jpg">
+    <div class="detail-desc">
+        <div class="detail-name">
+            <h4>Blueberry Cheesecake</h4>
+            <p class="detail-sub">Creamy cheesecake slice drizzled with berry compote, fresh berries, and mint.</p>
+            <p class="price">Rs 1100</p><br>
+            <button class="add-to-cart-btn" onclick="addToCart('Blueberry Cheesecake', 1100.00)">Add To Cart</button>
+        </div>
+        <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+    </div>
+</div>
+<div class="detail-card">
+    <img class="detail-img" src="fried chicken.jpeg">
+    <div class="detail-desc">
+        <div class="detail-name">
+            <h4>Fried Chicken(5pcs)</h4>
+            <p class="detail-sub">Crispy golden fried chicken pieces with spicy dipping sauce.</p>
+            <p class="price">Rs 1400</p><br>
+            <button class="add-to-cart-btn" onclick="addToCart('Fried Chicken(5pcs)', 1400.00)">Add To Cart</button>
+        </div>
+        <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+    </div>
+</div>
+
+<div class="detail-card">
+    <img class="detail-img" src="delicious-fresh-salad-.jpeg">
+    <div class="detail-desc">
+        <div class="detail-name">
+            <h4>Fresh Garden Salad</h4>
+            <p class="detail-sub">Fresh garden salad with mixed greens, cherry tomatoes, cucumber slices, and light dressing.</p>
+            <p class="price">Rs 1400</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Vegetable Salad', 880.00)">Add To Cart</button>
+        </div>
+        <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+</div>
+      </div>
+   </div>
+   
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="app.js"></script>
+</html>
